@@ -1,14 +1,25 @@
 <!DOCTYPE HTML>
 <html lang="en" dir="ltr">
-<script src="jepifier.js"></script>
+
+
 <head>
     <meta charset="UTF-8">
 </head>
 	<body >
 		<h1>Jepify #Jep</h1>
 		<h3>Her bliver hver sætning lidt mere #Jep!</h3>
-		<input id="input_field" placeholder="Indsæt tekst her">
-		<button id="jepify_button" onclick="jepify()">JEPIFY!</button>
-		<h2 id="result_header"></h2>
+		<!--<input id="input_field" placeholder="Indsæt tekst her">-->
+		<p>Skriv noget tekst og se hvordan denne tranformeres til #jep</p>
+
+		<div id="input_field"></div>
+
+		<div id="result_holder"></div>
+
+
+
+		<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+		<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+		<script src="jepifier.js"></script>
+
 	</body>
 </html>

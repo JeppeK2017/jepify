@@ -1,7 +1,43 @@
-function jepify() {
-    var inputStringArray = document.getElementById("input_field").value.split(" ");
+class InputField extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            inputText: ""
+        }
+    }
 
-    var resultHolder = document.getElementById("result_header");
+    render() {
+        return React.createElement(
+            'div',
+            null,
+            React.createElement(
+                'input',
+                {
+                    placeholder:"Indsæt tekst her",
+                    onChange: s => this.setState({inputText: s.target.value}),
+                    size: 100
+                }, null
+
+            ), React.createElement(
+                'h1', null, jepify(this.state.inputText)
+            )
+        );
+
+
+    }
+
+}
+
+
+ReactDOM.render(
+    React.createElement(InputField, null, null),
+    document.getElementById("input_field")
+);
+
+
+function jepify(text) {
+    var inputStringArray = text.split(" ");
+
     var result;
 
     if (inputStringArray.length > 1) {
@@ -15,6 +51,6 @@ function jepify() {
         result = "#" + inputStringArray.pop().toLowerCase() + "Jep";
     }
 
-    resultHolder.textContent = result;
+    return result;
 
 }
